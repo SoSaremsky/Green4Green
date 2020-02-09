@@ -1,7 +1,7 @@
 //temp lat < 40 = hot
 //temp lat >= 40 = cold
 //sunshine 29 < sun <=50   low
-//sunshine 50 < sun <= 70  med 
+//sunshine 50 < sun <= 70  med
 //sunshine 70 < sun <= 90  hi
 
 function coordsByZipcode(zip){
@@ -11,7 +11,7 @@ function coordsByZipcode(zip){
 		commType: "",
 		temp: ""
 	};
-	
+
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var reqhttp = new XMLHttpRequest();
 
@@ -23,6 +23,7 @@ function coordsByZipcode(zip){
   reqhttp.setRequestHeader("Content-type", "application/json");
 	reqhttp.setRequestHeader("Authorization", "910771335EB6744C9F9449F304EC3FF5");
   reqhttp.send();
+
 
   var coords = [];
 
