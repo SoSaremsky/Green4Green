@@ -170,26 +170,6 @@ function budget(){
      avgs[12] = 1296 / avgSalary; //Misc
      avgs[13] = undefined; //Not necessary for avgs
 
-     var unaccounted = 0;
-     for(var i = 1; i < inputs.lenght; i++){
-        if(inputs[i] === -1){
-          unaccounted += avgs[i-1];
-        }
-     }
-
-     var extra = (1 - (6863 / avgSalary)) * (salary - totalKnown);
-
-     //IF ANY NUMBERS ARE INCORRECT, IT IS PROBABLY THIS CALCULATION!!!
-     //PLEASE BE ADVISED LATER JACK!!!!
-     //IF UR NOT JACK AND U READ THIS AND ARE DEBUGGING, PLEASE LET JACK KNOW HE FORKED UP!!!!
-
-     for(var i = 1; i < inputs.lenght; i++){
-        if(inputs[i] === -1){
-          var thisAvg = avgs[i-1] / unaccounted;
-          inputs[i] = thisAvg * extra;
-        }
-     }
-
      //User averages
      var userPcts = []
      userPcts[0] = (food * 12) / salary;
@@ -217,6 +197,10 @@ function budget(){
           unaccountedModel += avgs[i-1];
         }
      }
+
+     //IF ANY NUMBERS ARE INCORRECT, IT IS PROBABLY THIS CALCULATION!!!
+     //PLEASE BE ADVISED LATER JACK!!!!
+     //IF UR NOT JACK AND U READ THIS AND ARE DEBUGGING, PLEASE LET JACK KNOW HE FORKED UP!!!!
 
      //Adds "expected" values to the input array
      var unaccounted = 100 - accounted;
