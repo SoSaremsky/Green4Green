@@ -293,7 +293,7 @@ var car= {
 
   category: "electricity",
   price: "high",
-  commtype: "not urban",
+  commtype: "suburban",
   sun: "all",
   temp: "all",
   mdescription: "Save for an energy efficient car.",
@@ -308,8 +308,8 @@ var solar ={
 
   category: "electricity",
   price: "high",
-  commtype: "not urban",
-  sun: "not 1",
+  commtype: "suburban",
+  sun: "3",
   temp: "all",
   mdescription: "Install solar panels.",
   edescription: "If you save for " + (Math.ceil(12000/monthlyDollars)).toString(10) + " months, you can afford to install solar panels and save both energy and money.",
@@ -501,7 +501,7 @@ var carpool ={
 
   category: "transportation",
   price: "low",
-  commtype: "not urban",
+  commtype: "suburban",
   sun: "all",
   temp: "all",
   mdescription: "Carpool.",
@@ -531,7 +531,7 @@ var electricVehicle ={
 
   category: "transportation",
   price: "high",
-  commtype: "not urban",
+  commtype: "rural",
   sun: "all",
   temp: "all",
   mdescription: "Purchase an energy efficient car.",
@@ -649,13 +649,14 @@ function overbudget(profile){
   return false;
 }
 
-function getList(profile){
+function getList(profile, location){
   var catList = ( profile.food, profile.housing, profile.water, profile.electricity, profile.transportation, profile.apparel, profile.healthcare, profile.entertainment, profile.personal_care, profile.education, profile.donation, profile.insurance_taxes, profile.misc);
-  return getListTemp( getListSun( getListCommType( getListCategory( getListPrice( returnMainList(), profile.available, "", 0), catList, "", 0), )));
+  return getListTemp( getListSun( getListCommType( getListCategory( getListPrice( returnMainList(), profile.available, "", 0), catList, "", 0), location.commType, "", 0), location.sunlevel, "", 0), location.temp, "");
 }
 
 function main(){
   var profile = localStorage.getItem("data");
+  var location = localStorage.getItem("loc");
 
   document.getElementById("overbudget").style.display = "none"
   for(var results in totalList){
@@ -667,7 +668,7 @@ function main(){
     return;
   }
 
-  var toDisplay = getList();
+  var toDisplay = shuffle(getList());
 
   for(var results in totalList){
     document.getElementById(results.id).style.display = "none";
