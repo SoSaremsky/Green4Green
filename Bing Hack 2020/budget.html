@@ -15,7 +15,6 @@
 <body>
   <ul>
     <li><a href="homepage.html">Home</a></li>
-    <li><a href="resources.html">Resources</a></li>
     <li><a href="budget.html">Budget</a></li>
     <li><a href="about.html">About Our Team</a></li>
   </ul>
@@ -23,81 +22,86 @@
   <h1 class="title"> Green4Green </h1>
   <h2> Please input your information to build your budget! </h2>
   <p> Note: Please input a yearly salary but monthly expenses.</p>
-  <form action= "./submission" method="post" enctype="multipart/form-data">
+  <div>
     <div class="row">
       <div class="column1">
         <div class="form">
           <label>Yearly Salary</label>
-          <input type="text" name="salary">
+          <input type="text" id="salary">
         </div>
         <div class="form">
           <label>Food Expense</label>
-          <input type="text" name="food">
+          <input type="text" id="food">
         </div>
         <div class="form">
           <label> Housing Expense</label>
-          <input type="text" name="housing">
+          <input type="text" id="housing">
         </div>
         <div class="form">
           <label>Water Expense</label>
-          <input type="text" name="water">
+          <input type="text" id="water">
         </div>
         <div class="form">
           <label>Electricity Expense</label>
-          <input type="text" name="electricity">
+          <input type="text" id="electricity">
         </div>
         <div class="form">
           <label> Transportation Expense</label>
-          <input type="text" name="transportation">
+          <input type="text" id="transportation">
         </div>
         <div class="form">
           <label>Apparel Expense</label>
-          <input type="text" name="apparel">
+          <input type="text" id="apparel">
         </div>
         <div class="form">
           <label>Healthcare Expense</label>
-          <input type="text" name="healthcare">
+          <input type="text" id="healthcare">
         </div>
       </div>
       <div class="column1">
         <div class="form">
           <label> Entertainment Expense</label>
-          <input type="text" name="entertainment">
+          <input type="text" id="entertainment">
         </div>
         <div class="form">
           <label> Personal Care Expense</label>
-          <input type="text" name="pCare">
+          <input type="text" id="pCare">
         </div>
         <div class="form">
           <label> Education Expense</label>
-          <input type="text" name="education">
+          <input type="text" id="education">
         </div>
         <div class="form">
           <label> Donations Expense</label>
-          <input type="text" name="donations">
+          <input type="text" id="donations">
         </div>
         <div class="form">
           <label> Insurance and Taxes Expenses</label>
-          <input type="text" name="insTax">
+          <input type="text" id="insTax">
         </div>
         <div class="form">
           <label> Misc. Expenses</label>
-          <input type="text" name="misc">
+          <input type="text" id="misc">
         </div>
         <div class="form">
           <label>Monthly Contribution</label>
-          <input type="text" name="contribution">
+          <input type="text" id="contribution">
         </div>
         <div class="form">
           <label>Zip Code</label>
-          <input type="text" name="zip">
+          <input type="text" id="zip">
         </div>
-      </div>
+        <div class="form">
+          <label>Community Type </label>
+          <input type="radio" id="urban">
+          <input type="radio" id="suburban">
+          <input type="radio" id="rural>
+         </div>
     </div>
     <div class="stupid">
-      <button class="dumb" type="submit"> Get Your Results Now!! </button>
+      <button class="dumb"onclick="budget()"> Get Your Results Now!! </button>
 
     </div>
-  </form>
-
+  </div>
+<script src="budgetinfo.js"></script>
 </html>

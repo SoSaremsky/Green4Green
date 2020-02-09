@@ -14,9 +14,10 @@ app.use(express.json());
 app.post('/submission', upload.none(), function (req, res, next) {
   duck = req.body;
   res.sendFile(__dirname + "/Bing Hack 2020/results.html");
+  next();
 })
 
-app.get("/budData", (req, res)=>{
+app.get("/budData ", (req, res)=>{
   res.send(duck);
   console.log(req);
 })
