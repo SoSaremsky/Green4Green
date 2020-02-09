@@ -1,3 +1,5 @@
+var totalList = [];
+
 /// TEMPLATE
 /*
 var method {
@@ -32,6 +34,7 @@ var meatType {
 
 }
 
+var totalList[0] = meatType;
 
 var reusableBag {
 
@@ -45,6 +48,7 @@ var reusableBag {
 
 }
 
+var totalList[1] = reusableBag;
 
 var ownFood {
 
@@ -58,6 +62,7 @@ var ownFood {
 
 }
 
+var totalList[2] = ownFood;
 
 var bulkCook {
 
@@ -70,6 +75,8 @@ var bulkCook {
   edescription: "Buying food in bulk tends to be cheaper, and cooking food in bulk saves heat and electricity as well."
 
 }
+
+var totalList[3] = bulkCook;
 
 //
 // WATER
@@ -87,6 +94,7 @@ var shortShower {
 
 }
 
+var totalList[4] = shortShower;
 
 var teethBrush {
 
@@ -100,6 +108,7 @@ var teethBrush {
 
 }
 
+var totalList[5] = teethBrush;
 
 var showerHead {
 
@@ -113,6 +122,7 @@ var showerHead {
 
 }
 
+var totalList[6] = showerHead;
 
 var waterButt {
 
@@ -126,6 +136,7 @@ var waterButt {
 
 }
 
+var totalList[7] = waterButt;
 
 var washMachine {
 
@@ -139,6 +150,7 @@ var washMachine {
 
 }
 
+var totalList[8] = washMachine;
 
 var toilet {
 
@@ -151,6 +163,22 @@ var toilet {
   edescription: "High efficiency toilets save an average of 3,000 gallons per year."
 
 }
+
+var totalList[9] = toilet;
+
+var xeriscaping {
+
+  category: "water",
+  price: "high",
+  commtype: "all",
+  sun: "all",
+  temp: "hot",
+  mdescription: "Xeriscape your property.",
+  edescription: "Xeriscaping can reduce water usage in your property by between 50-75% (averaging 60%)."
+
+}
+
+var totalList[10] = xeriscaping;
 
 //
 // ELECTRICITY
@@ -168,6 +196,7 @@ var drying {
 
 }
 
+var totalList[11] = drying;
 
 var thermostat {
 
@@ -181,6 +210,7 @@ var thermostat {
 
 }
 
+var totalList[12] = thermostat;
 
 var lightBulb {
 
@@ -194,6 +224,7 @@ var lightBulb {
 
 }
 
+var totalList[13] = lightBulb;
 
 var powerStrip {
 
@@ -207,6 +238,7 @@ var powerStrip {
 
 }
 
+var totalList[14] = powerStrip;
 
 var lightSwitch {
 
@@ -220,6 +252,7 @@ var lightSwitch {
 
 }
 
+var totalList[15] = lightSwitch;
 
 var heatWindows {
 
@@ -233,6 +266,7 @@ var heatWindows {
 
 }
 
+var totalList[16] = heatWindows;
 
 var coolWindows {
 
@@ -246,6 +280,7 @@ var coolWindows {
 
 }
 
+var totalList[17] = coolWindows;
 
 var car {
 
@@ -259,6 +294,8 @@ var car {
 
 }
 
+var totalList[18] = car;
+
 var solar {
 
   category: "electricity",
@@ -270,6 +307,8 @@ var solar {
   edescription: "If you save for " + str(Math.ciel(12000/monthlyDollars)) + " months, you can afford to install solar panels and save both energy and money."
 
 }
+
+var totalList[19] = solar;
 
 //
 // APPAREL
@@ -287,6 +326,7 @@ var pact {
 
 }
 
+var totalList[20] = pact;
 
 var thredUP {
 
@@ -300,6 +340,7 @@ var thredUP {
 
 }
 
+var totalList[21] = thredUP;
 
 var everlane {
 
@@ -313,6 +354,7 @@ var everlane {
 
 }
 
+var totalList[22] = everlane;
 
 var tentree {
 
@@ -326,6 +368,7 @@ var tentree {
 
 }
 
+var totalList[23] = tentree;
 
 var able {
 
@@ -339,8 +382,9 @@ var able {
 
 }
 
+var totalList[24] = able;
 
-var able {
+var peopleTree {
 
   category: "apparel",
   price: "high",
@@ -351,6 +395,8 @@ var able {
   edescription: "Fair trade, certified organic clothing made to last. Fairly pricey but will last years."
 
 }
+
+var totalList[25] = peopleTree;
 
 //
 // PERSONAL CARE
@@ -368,6 +414,7 @@ var toothpaste {
 
 }
 
+var totalList[26] = toothpaste;
 
 var deoderant {
 
@@ -381,6 +428,7 @@ var deoderant {
 
 }
 
+var totalList[27] = deoderant;
 
 var haircare {
 
@@ -394,6 +442,7 @@ var haircare {
 
 }
 
+var totalList[28] = haircare;
 
 var soap {
 
@@ -405,4 +454,149 @@ var soap {
   mdescription: "Organic pure castile liquid soap.",
   edescription: "Cheap, doesn't use chemical-laden fragrance. Vegetable-based, organic, and used for anything: hand-soap, dish soap, etc."
 
+}
+
+var totalList[29] = soap;
+
+
+//
+// TRANSPORTATION
+//
+
+var nonElectric {
+
+  category: "transportation",
+  price: "low",
+  commtype: "urban",
+  sun: "all",
+  temp: "all",
+  mdescription: "Find other methods of transportation.",
+  edescription: "Walk, bike, skateboard, etc. Not using public transportation or a car is an energy efficient way to get around."
+
+}
+
+var totalList[30] = nonElectric;
+
+var carpool {
+
+  category: "transportation",
+  price: "low",
+  commtype: "not urban",
+  sun: "all",
+  temp: "all",
+  mdescription: "Carpool.",
+  edescription: "Carpooling with two or three people will cut back significantly on car emissions."
+
+}
+
+var totalList[31] = nonElectric;
+
+var publicTransport {
+
+  category: "transportation",
+  price: "medium",
+  commtype: "urban",
+  sun: "all",
+  temp: "all",
+  mdescription: "Use public transport.",
+  edescription: "The more people take busses and subways, the fewer cars are on the road, lowering emissions."
+
+}
+
+var totalList[32] = publicTransport;
+
+var electricVehicle {
+
+  category: "transportation",
+  price: "high",
+  commtype: "not urban",
+  sun: "all",
+  temp: "all",
+  mdescription: "Purchase an energy efficient car.",
+  edescription: "If you save for " + str(Math.ciel(25000/monthlyDollars)) + " months, you can buy an energy efficient car and save both energy and money."
+
+}
+
+var totalList[33] = publicTransport;
+
+//
+// STUFF
+//
+
+function returnMainList(){
+  return totalList;
+}
+
+function getListPrice(worklist, pricerange, all){
+  var retlist = [];
+  for(var sol in worklist){
+    if(sol.price === pricerange || all){
+      retlist.push(sol);
+    }
+  }
+  return retlist;
+}
+
+function getListCategory(worklist, catArr, all){
+  var retlist = [];
+  for(var sol in worklist){
+    if(sol.category === catArr[0] && catArr[0] === 1){
+      retlist.push(sol);
+    }else if(sol.category === catArr[1] && catArr[1] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[1] && catArr[1] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[2] && catArr[2] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[3] && catArr[3] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[4] && catArr[4] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[5] && catArr[5] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[6] && catArr[6] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[7] && catArr[7] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[8] && catArr[8] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[9] && catArr[9] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[10] && catArr[10] === 1){
+      retList.push(sol);
+    }else if(sol.category === catArr[11] && catArr[11] === 1){
+      retList.push(sol);
+    }
+  }
+  return retlist;
+}
+
+function getListCommType(worklist, comm, all){
+  var retlist = [];
+  for(var sol in worklist){
+    if(sol.commtype === comm || all){
+      retlist.push(sol);
+    }
+  }
+  return retlist;
+}
+
+function getListSun(worklist, sun, all){
+  var retlist = [];
+  for(var sol in worklist){
+    if(sol.sun === not 1 || all){
+      retlist.push(sol);
+    }
+  }
+  return retlist;
+}
+
+function getListTemp(worklist, temp, all){
+  var retlist = [];
+  for(var sol in worklist){
+    if(sol.temp === temp || all){
+      retlist.push(sol);
+    }
+  }
+  return retlist;
 }
