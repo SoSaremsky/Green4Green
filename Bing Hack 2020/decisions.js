@@ -651,7 +651,7 @@ function overbudget(profile){
 
 function getList(profile, location){
   var catList = ( profile.food, profile.housing, profile.water, profile.electricity, profile.transportation, profile.apparel, profile.healthcare, profile.entertainment, profile.personal_care, profile.education, profile.donation, profile.insurance_taxes, profile.misc);
-  return getListTemp( getListSun( getListCommType( getListCategory( getListPrice( returnMainList(), profile.available, "", 0), catList, "", 0), location.commType, "", 0), location.sunlevel, "", 0), location.temp, "");
+  return getListTemp( getListSun( getListCommType( getListCategory( getListPrice( returnMainList(), profile.available, "", 0), catList, "", 0), location.commType, "", 0), location.sunlevel, "", 0), location.temp, "all");
 }
 
 function main(){
