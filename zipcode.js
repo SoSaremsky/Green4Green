@@ -4,7 +4,7 @@
 //sunshine 50 < sun <= 70  med
 //sunshine 70 < sun <= 90  hi
 
-function coordsByZipcode(zip){
+function coordsByZipcode(){
 
 	var location = {
 		sunlevel: 0,
@@ -14,7 +14,8 @@ function coordsByZipcode(zip){
 
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var reqhttp = new XMLHttpRequest();
-
+	
+  var zip = document.getElementById("zip").value	
   var url = "https://pcmiler.alk.com/apis/rest/v1.0/service.svc/locations?postcode=";
   url = url + zip;
 
