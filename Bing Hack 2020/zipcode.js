@@ -1,12 +1,10 @@
-import { require } from "require";
-
 //temp lat < 40 = hot
 //temp lat >= 40 = cold
 //sunshine 29 < sun <=50   low
 //sunshine 50 < sun <= 70  med
 //sunshine 70 < sun <= 90  hi
 
-function coordsByZipcode(){
+/*function coordsByZipcode(){
 
 	var location = {
 		sunlevel: 0,
@@ -18,16 +16,16 @@ function coordsByZipcode(){
   var reqhttp = new XMLHttpRequest();
 
   var zip = document.getElementById("zip").value
-  var url = "https://pcmiler.alk.com/apis/rest/v1.0/service.svc/locations?postcode=";
+  var url = "https://cors-anywhere.herokuapp.com/https://pcmiler.alk.com/apis/rest/v1.0/service.svc/locations?postcode=13902";
   url = url + zip;
 
-  reqhttp.responseType = "json";
-  reqhttp.open("GET", url, true);
-  reqhttp.setRequestHeader("Content-type", "application/json");
+
+//  reqhttp.responseType = "application/json";
+  reqhttp.open("GET", url);
+  //reqhttp.setRequestHeader("Content-type", "application/json");
 	reqhttp.setRequestHeader("Authorization", "910771335EB6744C9F9449F304EC3FF5");
+  reqhttp.setRequestHeader("Origin", "http://localhost")
   reqhttp.send();
-
-
   var coords = [];
 
   reqhttp.onreadystatechange = processRequest;
@@ -61,10 +59,11 @@ function coordsByZipcode(){
     }
   }
 }
-
+*/
 function distanceCities(lat1,lon1){
 	var fs = require('fs');
 	var textByLine = fs.readFileSync('data.txt').toString().split("\n");
+  console.log(fs.readFileSync('data.txt').toString().split(" #"))
 	var init = textByLine[0].toString().split(" #");
 	var smol = distance(lat1, lon1, parseFloat(init[1].substring(5)), parseFloat(init[2].substring(6)));
 	var index = 0;
@@ -78,7 +77,7 @@ function distanceCities(lat1,lon1){
 	}
 	return index;
 }
-
+/*
 function coordsFromCity(city, state){
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     var xml = new XMLHttpRequest();
@@ -105,7 +104,7 @@ function coordsFromCity(city, state){
       }
     }
 }
-
+*/
 function distance(lat1, lon1, lat2, lon2) {
 	if ((lat1 == lat2) && (lon1 == lon2)) {
 		return 0;
@@ -126,4 +125,110 @@ function distance(lat1, lon1, lat2, lon2) {
 	}
 }
 
-coordsByZipcode("90009");
+//coordsByZipcode("90009");
+
+distanceCities(45, -45);
+
+/*{
+  'name: Los Angeles',
+  'lat: 33.9771',
+  'long: -118.241559',
+  'sunshine: 73',
+  'name: Grand Junction',
+  'lat: 39.040343',
+  'long: -108.516074',
+  'sunshine: 71',
+  'name: Flagstaff',
+  'lat: 35.285217',
+  'long: -111.748916',
+  'sunshine: 78',
+  'name: Milford',
+  'lat: 33.91861',
+  'long: -94.08528',
+  'sunshine: 70',
+  'name: Redding',
+  'lat: 35.68',
+  'long: -93.77694',
+  'sunshine: 88',
+  'name: Little Rock',
+  'lat: 31.11444',
+  'long: -87.38889',
+  'sunshine: 62',
+  'name: Odessa',
+  'lat: 39.457332',
+  'long: -75.661317',
+  'sunshine: 74',
+  'name: Amarillo',
+  'lat: 35.220769',
+  'long: -101.83102',
+  'sunshine: 73',
+  'name: Denver',
+  'lat: 32.99389',
+  'long: -85.60667',
+  'sunshine: 69',
+  'name: Miami',
+  'lat: 33.399217',
+  'long: -110.868724',
+  'sunshine: 70',
+  'name: Las Vegas',
+  'lat: 36.173959',
+  'long: -115.12302',
+  'sunshine: 85',
+  'name: Winnemucca',
+  'lat: 40.973581',
+  'long: -117.734304',
+  'sunshine: 68',
+  'name: Yuma',
+  'lat: 32.699185',
+  'long: -114.574888',
+  'sunshine: 90',
+  'name: Roswell',
+  'lat: 34.2075',
+  'long: -86.53667',
+  'sunshine: 74',
+  'name: Concordia',
+  'lat: 39.570834',
+  'long: -97.662543',
+  'sunshine: 67',
+  'name: Lake Charles',
+  'lat: 28.1163',
+  'long: -82.4811',
+  'sunshine: 72',
+  'name: Cheyenne',
+  'lat: 39.17667',
+  'long: -98.63861',
+  'sunshine: 66',
+  'name: Lubbock',
+  'lat: 33.577841',
+  'long: -101.855143',
+  'sunshine: 72',
+  'name: Abilene',
+  'lat: 36.14556',
+  'long: -119.05278',
+  'sunshine: 70',
+  'name: Phoenix',
+  'lat: 33.451095',
+  'long: -112.077428',
+  'sunshine: 85',
+  'name: Pueblo',
+  'lat: 38.270621',
+  'long: -104.607368',
+  'sunshine: 76',
+  'name: Tucson',
+  'lat: 32.210636',
+  'long: -110.967733',
+  'sunshine: 85',
+  'name: Reno',
+  'lat: 38.95278',
+  'long: -77.07861',
+  'sunshine: 79',
+  'name: Dodge City',
+  'lat: 34.178709',
+  'long: -86.847497',
+  'sunshine: 70',
+  'name: Ely',
+  'lat: 41.873619',
+  'long: -91.585177',
+  'sunshine: 73',
+}
+*/

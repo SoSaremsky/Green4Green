@@ -510,7 +510,7 @@ var carpool ={
 
 }
 
-totalList.push(nonElectric);
+totalList.push(carpool);
 
 var publicTransport ={
 
@@ -540,7 +540,7 @@ var electricVehicle ={
 
 }
 
-totalList.push(publicTransport);
+totalList.push(electricVehicle);
 
 //
 // STUFF
@@ -568,33 +568,33 @@ function getListPrice(worklist, pricerange, all, exc){
 
 function getListCategory(worklist, catArr, all){
   var retlist = [];
-  for(var sol in worklist){
-    if(sol.category === catArr[0] && catArr[0] === 1){
-      retlist.push(sol);
-    }else if(sol.category === catArr[1] && catArr[1] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[1] && catArr[1] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[2] && catArr[2] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[3] && catArr[3] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[4] && catArr[4] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[5] && catArr[5] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[6] && catArr[6] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[7] && catArr[7] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[8] && catArr[8] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[9] && catArr[9] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[10] && catArr[10] === 1){
-      retList.push(sol);
-    }else if(sol.category === catArr[11] && catArr[11] === 1){
-      retList.push(sol);
+  for(var i = 0; i < worklist.length; i++){
+    if(worklist[i].category == "food" && catArr[0] == 1){
+      retlist.push(worklist[i]);
+    }else if(worklist[i].category == "housing" && catArr[1] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "water" && catArr[1] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "electricity" && catArr[2] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "education" && catArr[3] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "apparel" && catArr[4] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "healthcare" && catArr[5] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "entertainment" && catArr[6] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "personal_care" && catArr[7] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "education" && catArr[8] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "donation" && catArr[9] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "insurance_taxes" && catArr[10] == 1){
+      retList.push(worklist[i]);
+    }else if(worklist[i].category == "misc" && catArr[11] == 1){
+      retList.push(worklist[i]);
     }
   }
   return retlist;
@@ -649,18 +649,29 @@ function overbudget(profile){
   return false;
 }
 
-function getList(profile, location){
-  var catList = ( profile.food, profile.housing, profile.water, profile.electricity, profile.transportation, profile.apparel, profile.healthcare, profile.entertainment, profile.personal_care, profile.education, profile.donation, profile.insurance_taxes, profile.misc);
-  return getListTemp( getListSun( getListCommType( getListCategory( getListPrice( returnMainList(), profile.available, "", 0), catList, "", 0), location.commType, "", 0), location.sunlevel, "", 0), location.temp, "all");
+function getList(profile){
+  var catList = [ profile.food, profile.housing, profile.water, profile.electricity, profile.transportation, profile.apparel, profile.healthcare, profile.entertainment, profile.personal_care, profile.education, profile.donation, profile.insurance_taxes, profile.misc];
+  //return getListTemp( getListSun( getListCommType( getListCategory( getListPrice( returnMainList(), profile.available, "", 0), catList, "", 0), location.commType, "", 0), location.sunlevel, "", 0), location.temp, "all");
+  var price;
+  if(profile.available > 300){
+    price = "high"
+  }else if(profile.available > 50){
+    price = "medium"
+  }else{
+    price = "low"
+  }
+  return getListCategory( returnMainList(), catList, "all", 0);
 }
 
 function main(){
   var profile = localStorage.getItem("data");
-  var location = localStorage.getItem("loc");
 
-  document.getElementById("overbudget").style.display = "none"
-  for(var results in totalList){
-    document.getElementById(results.id).style.display = "none";
+  console.log(profile);
+  //var location = localStorage.getItem("loc");
+
+  //document.getElementById("overbudget").style.display = "none"
+  for(var i = 0; i < totalList.length; i++){
+    document.getElementById(totalList[i].id).style.display = "none";
   }
 
   if (overbudget(profile)){
@@ -668,17 +679,31 @@ function main(){
     return;
   }
 
-  var toDisplay = shuffle(getList());
+  var toDisplay = shuffle(getList(profile));
 
-  for(var results in totalList){
-    document.getElementById(results.id).style.display = "none";
-  }
+  console.log(toDisplay);
 
-  for(var results in totalList){
-    for(var finals in toDisplay){
-      if(finals.id === results.id){
-        document.getElementById(finals.id).style.display = "block";
+  for(var i = 0; i < toDisplay.length; i++){
+        document.getElementById(totalList[Number(toDisplay[i])])).style.display = "block";
       }
-    }
+}
+
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
+
+  return array;
 }
