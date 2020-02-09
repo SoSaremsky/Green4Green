@@ -9,7 +9,7 @@ function coordsByZipcode(zip){
   reqhttp.open("GET", url, true);
   reqhttp.setRequestHeader("Content-type", "application/json");
   reqhttp.setRequestHeader("Authorization", "910771335EB6744C9F9449F304EC3FF5");
-  reqhttp.send();
+  reqhttp.send(JSON.stringify({Locations:[{"Address": {"Zip":  }}]}));
 
   var coords = [];
 

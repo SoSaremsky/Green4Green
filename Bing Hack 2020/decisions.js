@@ -1,274 +1,3 @@
-function budget(){
-
-     var profile = {
-       available: 0,
-       food: 0,
-       housing: 0,
-       water: 0,
-       electricity: 0,
-       transportation: 0,
-       apparel: 0,
-       healthcare: 0,
-       entertainment: 0,
-       personal_care: 0,
-       education: 0,
-       donation: 0,
-       insurance_taxes: 0,
-       misc: 0,
-       overbudget: 0
-     };
-
-     var inputs = [];
-/*
-     var salary;
-     if(document.getElementById("salary") != ""){
-       salary = Number(document.getElementById("salary"));
-       inputs[0] = salary;
-     }else{
-       alert("Please input a salary.");
-     }
-
-     var food;
-     if(document.getElementById("food") != ""){
-       food = Number(document.getElementById("food"));
-     }else{
-       food = -1;
-     }
-     inputs[1] = food;
-
-     var housing;
-     if(document.getElementById("housing") != ""){
-       housing = Number(document.getElementById("housing"));
-     }else{
-       housing = -1;
-     }
-     inputs[2] = housing;
-
-     var water;
-     if(document.getElementById("water") != ""){
-       water = Number(document.getElementById("water"));
-     }else{
-       water = -1;
-     }
-     inputs[3] = water;
-
-     var electricity;
-     if(document.getElementById("electricity") != ""){
-       electricity = Number(document.getElementById("electricity"));
-     }else{
-       electricity = -1;
-     }
-     inputs[4] = electricity;
-
-     var transportation;
-     if(document.getElementById("transportation") != ""){
-       transportation = Number(document.getElementById("transportation"));
-     }else{
-       transportation = -1;
-     }
-     inputs[5] = transportation;
-
-     var apparel;
-     if(document.getElementById("apparel") != ""){
-       apparel = Number(document.getElementById("apparel"));
-     }else{
-       apparel = -1;
-     }
-     inputs[6] = apparel;
-
-     var healthcare;
-     if(document.getElementById("healthcare") != ""){
-       healthcare = Number(document.getElementById("healthcare"));
-     }else{
-       healthcare = -1;
-     }
-     inputs[7] = healthcare;
-
-     var entertainment;
-     if(document.getElementById("entertainment") != ""){
-       entertainment = Number(document.getElementById("entertainment"));
-     }else{
-       entertainment = -1;
-     }
-     inputs[8] = entertainment;
-
-     var pCare;
-     if(document.getElementById("pCare") != ""){
-       pCare = Number(document.getElementById("pCare"));
-     }else{
-       pCare = -1;
-     }
-     inputs[9] = pCare;
-
-     var education;
-     if(document.getElementById("education") != ""){
-       education = Number(document.getElementById("education"));
-     }else{
-       education = -1;
-     }
-     inputs[10] = education;
-
-     var donations;
-     if(document.getElementById("donations") != ""){
-       donations = Number(document.getElementById("donations"));
-     }else{
-       donations = -1;
-     }
-     inputs[11] = donations;
-
-     var insTax;
-     if(document.getElementById("insTax") != ""){
-       insTax = Number(document.getElementById("insTax"));
-     }else{
-       insTax = -1;
-     }
-     inputs[12] = insTax;
-
-     var misc;
-     if(document.getElementById("misc") != ""){
-       misc = Number(document.getElementById("misc"));
-     }else{
-       misc = -1;
-     }
-     inputs[13] = misc;
-
-     var contribution;
-     if(document.getElementById("contribution") != ""){
-       contribution = Number(document.getElementById("contribution"));
-     }else{
-       contribution = -1;
-     }
-     inputs[14] = contribution;
-     */
-
-     var totalKnown = 0;
-     for(var i = 1; i < inputs.length; i++){
-       totalKnown += (inputs[i] * 12);
-     }
-
-     if(totalKnown > salary){
-       profile.overbudget = 1;
-     }
-
-     /*Array values [0: Food, 1: Housing, 2: Water, 3: Electricity, 4: Transportation, 5: Apparel, 6: Healthcare, 7: Entertainment, 8: Personal Care, 9: Education,
-     10: Donations, 11: Insurance/Tax, 12: Misc, 13: Contribution]*/
-
-     //US averages
-     var avgs = []
-     var avgSalary = 74664;
-     avgs[0] = 7687 / avgSalary; //Food
-     avgs[1] = 16706 / avgSalary; //Housing
-     avgs[2] = 840 / avgSalary; //Water
-     avgs[3] = 1340 / avgSalary; //Electricity
-     agvs[4] = 9049 / avgSalary; //Transportation
-     avgs[5] = 1803 / avgSalary; //Apparel
-     avgs[6] = 4612 / avgSalary; //Healthcare
-     avgs[7] = 3031 / avgSalary; //Entertainment
-     avgs[8] = 707 / avgSalary; //Personal Care
-     avgs[9] = 1329 / avgSalary; //Education
-     avgs[10] = 2081 / avgSalary; //Donations
-     avgs[11] = 17320 / avgSalary; //InsTax
-     avgs[12] = 1296 / avgSalary; //Misc
-     avgs[13] = undefined; //Not necessary for avgs
-
-     //User averages
-     var userPcts = []
-     userPcts[0] = (food * 12) / salary;
-     userPcts[1] = (housing * 12) / salary;
-     userPcts[2] = (water * 12) / salary;
-     userPcts[3] = (electricity * 12) / salary;
-     userPcts[4] = (transportation * 12) / salary;
-     userPcts[5] = (apparel * 12) / salary;
-     userPcts[6] = (healthcare * 12) / salary;
-     userPcts[7] = (entertainment * 12) / salary;
-     userPcts[8] = (pCare * 12) / salary;
-     userPcts[9] = (education * 12) / salary;
-     userPcts[10] = (donations * 12) / salary;
-     userPcts[11] = (insTax * 12) / salary;
-     userPcts[12] = (misc * 12) / salary;
-     userPcts[13] = (contribution * 12) / salary;
-
-     //Gets what percent of the USERS salary is accounted for by fields they entered (Based on what they didn't enter)
-     var accounted = 0;
-     var unaccountedModel = 0;
-     for(var i = 1; i < inputs.lenght; i++){
-        if(inputs[i] >= 0){
-          accounted += userPcts[i-1];
-        }else{
-          unaccountedModel += avgs[i-1];
-        }
-     }
-
-     //IF ANY NUMBERS ARE INCORRECT, IT IS PROBABLY THIS CALCULATION!!!
-     //PLEASE BE ADVISED LATER JACK!!!!
-     //IF UR NOT JACK AND U READ THIS AND ARE DEBUGGING, PLEASE LET JACK KNOW HE FORKED UP!!!!
-
-     //Adds "expected" values to the input array
-     var unaccounted = 100 - accounted;
-     var extra = (1 - (6863 / avgSalary)) * (salary - totalKnown);
-     for(var i = 1; i < inputs.lenght; i++){
-        if(inputs[i] === -1){
-          var thisAvg = unaccounted / unaccountedModel * avgs[i-1];
-          inputs[i] = thisAvg * extra;
-          userPcts[i-1] = (inputs[i] * 12) / salary;
-        }
-     }
-
-     for(var i = 0; i < userPcts.length - 1; i++){
-       if(userPcts[i] > (avgs[i] * 1.05)){
-         if(i === 0){
-           profile.food = 1;
-         }else if(i === 1){
-           profile.housing = 1;
-         }else if(i === 2){
-           profile.water = 1;
-         }else if(i === 3){
-           profile.electricity = 1;
-         }else if(i === 4){
-           profile.transportation = 1;
-         }else if(i === 5){
-           profile.apparel = 1;
-         }else if(i === 6){
-           profile.healthcare = 1;
-         }else if(i === 7){
-           profile.entertainment = 1;
-         }else if(i === 8){
-           profile.personal_care = 1;
-         }else if(i === 9){
-           profile.education = 1;
-         }else if(i === 10){
-           profile.donation = 1;
-         }else if(i === 11){
-           profile.insurance_taxes = 1;
-         }else if(i === 12){
-           profile.misc = 1;
-         }
-       }
-     }
-
-     var expectedAccounted = 0;
-     for(var i = 1; i < inputs.length - 1; i++){
-       expectedAccounted += (inputs[i] * 12);
-     }
-
-     if(inputs[14] !== -1){
-       profile.available = inputs[14];
-     }else{
-       profile.available = (salary - expectedAccounted) / 12;
-     }
-     return profile;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 var totalList = [];
@@ -303,8 +32,8 @@ var meatType = {
   sun: "all",
   temp: "all",
   mdescription: "Purchase less red meat and more white meat and fish.",
-  edescription: "Red meat production is often associated with polllution through fossil fuel usage, animal methane, effluent waste, and water and land. Chicken, turkey, and salmon are the 3 most energy efficient meats. They are also cheaper than red meats, saving money."
-
+  edescription: "Red meat production is often associated with polllution through fossil fuel usage, animal methane, effluent waste, and water and land. Chicken, turkey, and salmon are the 3 most energy efficient meats. They are also cheaper than red meats, saving money.",
+  id: "meatType"
 }
 
 totalList.push(meatType);
@@ -317,8 +46,8 @@ var reusableBag = {
   sun: "all",
   temp: "all",
   mdescription: "Use reusable bags.",
-  edescription: "Reusable bags prevent plastic bags from being used in excess and save money in the long run (many states even have a tax for using plastic bags)."
-
+  edescription: "Reusable bags prevent plastic bags from being used in excess and save money in the long run (many states even have a tax for using plastic bags).",
+  id: "reusableBag"
 }
 
 totalList.push(reusableBag);
@@ -331,8 +60,8 @@ var ownFood ={
   sun: "all",
   temp: "all",
   mdescription: "Buy more of your own food.",
-  edescription: "Reusable bags prevent plastic bags from being used in excess and save money in the long run (many states even have a tax for using plastic bags)."
-
+  edescription: "Reusable bags prevent plastic bags from being used in excess and save money in the long run (many states even have a tax for using plastic bags).",
+  id: "ownFood"
 }
 
 totalList.push(ownFood);
@@ -345,8 +74,8 @@ var bulkCook ={
   sun: "all",
   temp: "all",
   mdescription: "Buy and cook food in bulk",
-  edescription: "Buying food in bulk tends to be cheaper, and cooking food in bulk saves heat and electricity as well."
-
+  edescription: "Buying food in bulk tends to be cheaper, and cooking food in bulk saves heat and electricity as well.",
+  id: "bulkCook"
 }
 
 totalList.push(bulkCook);
@@ -363,8 +92,8 @@ var shortShower= {
   sun: "all",
   temp: "all",
   mdescription: "Take shorter showers",
-  edescription: "Most showers use 2.5 gallons of water per minute. Taking shorter showers will save both water and money from the water bill."
-
+  edescription: "Most showers use 2.5 gallons of water per minute. Taking shorter showers will save both water and money from the water bill.",
+  id: "shortShower"
 }
 
 totalList.push(shortShower);
@@ -377,8 +106,8 @@ var teethBrush ={
   sun: "all",
   temp: "all",
   mdescription: "Turn off the water while brushing your teeth",
-  edescription: "On average, people who don't turn the water off while brushing their teeth use 1000 gallons more per year. Save water and electricity!"
-
+  edescription: "On average, people who don't turn the water off while brushing their teeth use 1000 gallons more per year. Save water and electricity!",
+  id: "teethBrush"
 }
 
 totalList.push(teethBrush);
@@ -391,8 +120,8 @@ var showerHead ={
   sun: "all",
   temp: "all",
   mdescription: "Purchase a WaterSense showerhead",
-  edescription: "WaterSense showerheads save families an average of 2900 gallons of water per year, saving both water and money."
-
+  edescription: "WaterSense showerheads save families an average of 2900 gallons of water per year, saving both water and money.",
+  id: "showerHead"
 }
 
 totalList.push(showerHead);
@@ -405,8 +134,8 @@ var waterButt ={
   sun: "all",
   temp: "all",
   mdescription: "Install a water butt.",
-  edescription: "Water butts collect rainwater. Use this water to clean your car, water your plants, etc. It saves both money and water."
-
+  edescription: "Water butts collect rainwater. Use this water to clean your car, water your plants, etc. It saves both money and water.",
+  id: "waterButt"
 }
 
 totalList.push(waterButt);
@@ -419,8 +148,8 @@ var washMachine ={
   sun: "all",
   temp: "all",
   mdescription: "Purchase an Energy Star washing machine",
-  edescription: "On average, you save about $35 a year on utility bills compared to a standard model, as well as 2000 gallons of water per year."
-
+  edescription: "On average, you save about $35 a year on utility bills compared to a standard model, as well as 2000 gallons of water per year.",
+  id: "washMachine"
 }
 
 totalList.push(washMachine);
@@ -433,8 +162,8 @@ var toilet ={
   sun: "all",
   temp: "all",
   mdescription: "Purchase an energy efficient toilet",
-  edescription: "High efficiency toilets save an average of 3,000 gallons per year."
-
+  edescription: "High efficiency toilets save an average of 3,000 gallons per year.",
+  id: "toilet"
 }
 
 totalList.push(toilet);
@@ -447,8 +176,8 @@ var xeriscaping ={
   sun: "all",
   temp: "hot",
   mdescription: "Xeriscape your property.",
-  edescription: "Xeriscaping can reduce water usage in your property by between 50-75% (averaging 60%)."
-
+  edescription: "Xeriscaping can reduce water usage in your property by between 50-75% (averaging 60%).",
+  id: "xeriscaping"
 }
 
 totalList.push(xeriscaping);
@@ -465,7 +194,8 @@ var drying ={
   sun: "all",
   temp: "all",
   mdescription: "Hang clothes to dry",
-  edescription: "Dryers use a lot of electricity. Instead of using a dryer, try hanging clothes to dry to save electricity."
+  edescription: "Dryers use a lot of electricity. Instead of using a dryer, try hanging clothes to dry to save electricity.",
+  id: "drying"
 
 }
 
@@ -479,8 +209,8 @@ var thermostat= {
   sun: "all",
   temp: "all",
   mdescription: "Don't adjust your thermostat as much on hot or cold days.",
-  edescription: "Heating and cooling costs constitute nearly half of an average home's utility bills. These reductions can save a significant amount of electricity."
-
+  edescription: "Heating and cooling costs constitute nearly half of an average home's utility bills. These reductions can save a significant amount of electricity.",
+  id: "thermostat"
 }
 
 totalList.push(thermostat);
@@ -493,8 +223,8 @@ var lightBulb ={
   sun: "all",
   temp: "all",
   mdescription: "Use energy efficient light bulbs.",
-  edescription: "Halogen incadescent buls, compact fluorescent lights, and light-emitting diode bulbs use anywhere from 25-80% less electricity and last 3-25x longer."
-
+  edescription: "Halogen incadescent buls, compact fluorescent lights, and light-emitting diode bulbs use anywhere from 25-80% less electricity and last 3-25x longer.",
+  id: "lightBulb"
 }
 
 totalList.push(lightBulb);
@@ -507,7 +237,8 @@ var powerStrip ={
   sun: "all",
   temp: "all",
   mdescription: "Purchase smart power strips",
-  edescription: "It is estimated that 75% of the energy used to power household electronics is consumed when they are switched off, costing up to $200 per year. Smart power strips eliminate that problem."
+  edescription: "It is estimated that 75% of the energy used to power household electronics is consumed when they are switched off, costing up to $200 per year. Smart power strips eliminate that problem.",
+  id: "powerStrip"
 
 }
 
@@ -521,7 +252,8 @@ var lightSwitch ={
   sun: "all",
   temp: "all",
   mdescription: "Use smart light switches.",
-  edescription: "Installing motion sensored light switches can save up to $100 a year and will turn off autoomatically so you don't waste electricity."
+  edescription: "Installing motion sensored light switches can save up to $100 a year and will turn off autoomatically so you don't waste electricity.",
+  id: "lightSwitch"
 
 }
 
@@ -535,7 +267,8 @@ var heatWindows= {
   sun: "all",
   temp: "cold",
   mdescription: "Install energy efficient windows that contain heat.",
-  edescription: "Heat escaping through windows can amount to 10-25% a total heating bill. Energy efficient windows with \"low-e\" coatings can reduce heat loss by 10-20%."
+  edescription: "Heat escaping through windows can amount to 10-25% a total heating bill. Energy efficient windows with \"low-e\" coatings can reduce heat loss by 10-20%.",
+  id: "heatWindows"
 
 }
 
@@ -549,7 +282,8 @@ var coolWindows ={
   sun: "all",
   temp: "hot",
   mdescription: "Install energy efficient windows that prevent heat gain.",
-  edescription: "Heat gain through windows can be a problem in warmer climates. Low-e coatings on windows can reduce heat gain by reflecting more light, and can save $20-$95 each year on utility bills."
+  edescription: "Heat gain through windows can be a problem in warmer climates. Low-e coatings on windows can reduce heat gain by reflecting more light, and can save $20-$95 each year on utility bills.",
+  id: "coolWindows"
 
 }
 
@@ -563,7 +297,8 @@ var car= {
   sun: "all",
   temp: "all",
   mdescription: "Save for an energy efficient car.",
-  edescription: "If you save for " + (Math.ceil(25000/monthlyDollars)).toString(10) + " months, you can buy an energy efficient car and save both energy and money."
+  edescription: "If you save for " + (Math.ceil(25000/monthlyDollars)).toString(10) + " months, you can buy an energy efficient car and save both energy and money.",
+  id: "car"
 
 }
 
@@ -577,7 +312,8 @@ var solar ={
   sun: "not 1",
   temp: "all",
   mdescription: "Install solar panels.",
-  edescription: "If you save for " + (Math.ceil(12000/monthlyDollars)).toString(10) + " months, you can afford to install solar panels and save both energy and money."
+  edescription: "If you save for " + (Math.ceil(12000/monthlyDollars)).toString(10) + " months, you can afford to install solar panels and save both energy and money.",
+  id: "solar"
 
 }
 
@@ -595,7 +331,8 @@ var pact ={
   sun: "all",
   temp: "all",
   mdescription: "Pact clothing.",
-  edescription: "Organic, GOTS Certified, fair trade, eco-friendly, and cheap clothing."
+  edescription: "Organic, GOTS Certified, fair trade, eco-friendly, and cheap clothing.",
+  id: "pact"
 
 }
 
@@ -609,7 +346,8 @@ var thredUP ={
   sun: "all",
   temp: "all",
   mdescription: "thredUP clothing.",
-  edescription: "Upcycling clothing at a relatively low cost (90% markdown)"
+  edescription: "Upcycling clothing at a relatively low cost (90% markdown)",
+  id: "thredUP"
 
 }
 
@@ -623,7 +361,8 @@ var everlane ={
   sun: "all",
   temp: "all",
   mdescription: "Everlane clothing.",
-  edescription: "Ethically made adult apparel for a moderate cost."
+  edescription: "Ethically made adult apparel for a moderate cost.",
+  id: "everlane"
 
 }
 
@@ -637,7 +376,8 @@ var tentree ={
   sun: "all",
   temp: "all",
   mdescription: "Tentree clothing.",
-  edescription: "Ethically made, organic, eco-friendly, gives back to the environment by planting ten trees for every item purchased. They have planted over 35 million trees around the world. Moderately priced clothing."
+  edescription: "Ethically made, organic, eco-friendly, gives back to the environment by planting ten trees for every item purchased. They have planted over 35 million trees around the world. Moderately priced clothing.",
+  id: "tentree"
 
 }
 
@@ -651,7 +391,8 @@ var able ={
   sun: "all",
   temp: "all",
   mdescription: "Able clothing.",
-  edescription: "Artisan-made in Peru with fair labor practices. Women are hired and paid well to help them provide for themselves to end generational poverty."
+  edescription: "Artisan-made in Peru with fair labor practices. Women are hired and paid well to help them provide for themselves to end generational poverty.",
+  id: "able"
 
 }
 
@@ -665,7 +406,8 @@ var peopleTree= {
   sun: "all",
   temp: "all",
   mdescription: "People Tree clothing.",
-  edescription: "Fair trade, certified organic clothing made to last. Fairly pricey but will last years."
+  edescription: "Fair trade, certified organic clothing made to last. Fairly pricey but will last years.",
+  id: "peopleTree"
 
 }
 
@@ -683,7 +425,8 @@ var toothpaste ={
   sun: "all",
   temp: "all",
   mdescription: "Tom's of Maine toothpaste",
-  edescription: "Relatively cheap toothpaste from an eco-friendly company with good business practices. They only use natural ingredients and use recycled packaging and donate 10% of profits to non-profits."
+  edescription: "Relatively cheap toothpaste from an eco-friendly company with good business practices. They only use natural ingredients and use recycled packaging and donate 10% of profits to non-profits.",
+  id: "toothpaste"
 
 }
 
@@ -697,7 +440,8 @@ var deoderant ={
   sun: "all",
   temp: "all",
   mdescription: "Tom's of Maine deoderant.",
-  edescription: "Natural long lasting deoderant that is aluminum-free with a recyclable plastic container."
+  edescription: "Natural long lasting deoderant that is aluminum-free with a recyclable plastic container.",
+  id: "deoderant"
 
 }
 
@@ -711,7 +455,8 @@ var haircare ={
   sun: "all",
   temp: "all",
   mdescription: "Burt's Bees Shampoo and Conditioner.",
-  edescription: "Uses post-consumer recycled materials in their packaging and the container is recyclable once it's empty. Good working conditions and no animal testing. They also donate 10% of their online sales to non-profits."
+  edescription: "Uses post-consumer recycled materials in their packaging and the container is recyclable once it's empty. Good working conditions and no animal testing. They also donate 10% of their online sales to non-profits.",
+  id: "haircare"
 
 }
 
@@ -725,7 +470,8 @@ var soap= {
   sun: "all",
   temp: "all",
   mdescription: "Organic pure castile liquid soap.",
-  edescription: "Cheap, doesn't use chemical-laden fragrance. Vegetable-based, organic, and used for anything: hand-soap, dish soap, etc."
+  edescription: "Cheap, doesn't use chemical-laden fragrance. Vegetable-based, organic, and used for anything: hand-soap, dish soap, etc.",
+  id: "soap"
 
 }
 
@@ -744,7 +490,8 @@ var nonElectric ={
   sun: "all",
   temp: "all",
   mdescription: "Find other methods of transportation.",
-  edescription: "Walk, bike, skateboard, etc. Not using public transportation or a car is an energy efficient way to get around."
+  edescription: "Walk, bike, skateboard, etc. Not using public transportation or a car is an energy efficient way to get around.",
+  id: "nonElectric"
 
 }
 
@@ -758,7 +505,8 @@ var carpool ={
   sun: "all",
   temp: "all",
   mdescription: "Carpool.",
-  edescription: "Carpooling with two or three people will cut back significantly on car emissions."
+  edescription: "Carpooling with two or three people will cut back significantly on car emissions.",
+  id: "carpool"
 
 }
 
@@ -772,7 +520,8 @@ var publicTransport ={
   sun: "all",
   temp: "all",
   mdescription: "Use public transport.",
-  edescription: "The more people take busses and subways, the fewer cars are on the road, lowering emissions."
+  edescription: "The more people take busses and subways, the fewer cars are on the road, lowering emissions.",
+  id: "publicTransport"
 
 }
 
@@ -786,7 +535,8 @@ var electricVehicle ={
   sun: "all",
   temp: "all",
   mdescription: "Purchase an energy efficient car.",
-  edescription: "If you save for " + (Math.ceil(25000/monthlyDollars)).toString(10) + " months, you can buy an energy efficient car and save both energy and money."
+  edescription: "If you save for " + (Math.ceil(25000/monthlyDollars)).toString(10) + " months, you can buy an energy efficient car and save both energy and money.",
+  id: "electricVehicle"
 
 }
 
@@ -800,11 +550,17 @@ function returnMainList(){
   return totalList;
 }
 
-function getListPrice(worklist, pricerange, all){
+function getListPrice(worklist, pricerange, all, exc){
   var retlist = [];
   for(var sol in worklist){
-    if(sol.price === pricerange || all){
-      retlist.push(sol);
+    if(exc === 0){
+      if(sol.price === pricerange || all){
+        retlist.push(sol);
+      }
+    }else{
+      if(sol.price !== pricerange){
+        retlist.push(sol);
+      }
     }
   }
   return retlist;
@@ -844,21 +600,33 @@ function getListCategory(worklist, catArr, all){
   return retlist;
 }
 
-function getListCommType(worklist, comm, all){
+function getListCommType(worklist, comm, all, exc){
   var retlist = [];
   for(var sol in worklist){
-    if(sol.commtype === comm || all){
-      retlist.push(sol);
+    if(exc === 0){
+      if(sol.commtype === comm || all){
+        retlist.push(sol);
+      }
+    }else{
+      if(sol.commtypw !== comm){
+        retlist.push(sol);
+      }
     }
   }
   return retlist;
 }
 
-function getListSun(worklist, sun, all){
+function getListSun(worklist, sun, all, exc){
   var retlist = [];
   for(var sol in worklist){
-    if(sol.sun === sun || all){
-      retlist.push(sol);
+    if(exc === 0){
+      if(sol.sun === sun || all){
+        retlist.push(sol);
+      }
+    }else{
+      if(sol.sun !== sun){
+        retlist.push(sol);
+      }
     }
   }
   return retlist;
@@ -874,34 +642,6 @@ function getListTemp(worklist, temp, all){
   return retlist;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let duck;
-fetch("/budData")
-  .then(response=>resonse.json)
-  .then(response=>duck =response)
-  .catch((err)=>console.log(err));
-  console.log(duck);
-
 function overbudget(profile){
   if (profile.overbudge === 1){
     return true;
@@ -911,15 +651,33 @@ function overbudget(profile){
 
 function getList(profile){
   var catList = ( profile.food, profile.housing, profile.water, profile.electricity, profile.transportation, profile.apparel, profile.healthcare, profile.entertainment, profile.personal_care, profile.education, profile.donation, profile.insurance_taxes, profile.misc);
-  return getListTemp();
+  return getListTemp( getListSun( getListCommType( getListCategory( getListPrice( returnMainList(), profile.available, "", 0), catList, "", 0), )));
 }
 
 function main(){
-  var profile = budget();
+  var profile = localStorage.getItem("data");
 
-  if (overbudget(profile)){
-  //  |||FIGURE OUT WITH ILANA|||
+  document.getElementById("overbudget").style.display = "none"
+  for(var results in totalList){
+    document.getElementById(results.id).style.display = "none";
   }
 
+  if (overbudget(profile)){
+    document.getElementById("overbudget").style.display = "block"
+    return;
+  }
 
+  var toDisplay = getList();
+
+  for(var results in totalList){
+    document.getElementById(results.id).style.display = "none";
+  }
+
+  for(var results in totalList){
+    for(var finals in toDisplay){
+      if(finals.id === results.id){
+        document.getElementById(finals.id).style.display = "block";
+      }
+    }
+  }
 }
