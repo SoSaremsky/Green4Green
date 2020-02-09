@@ -18,132 +18,133 @@ function budget(){
        overbudget: 0
      };
 
-     var inputs = [];
-/*
+     var inputs = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+
      var salary;
-     if(document.getElementById("salary") != ""){
-       salary = Number(document.getElementById("salary"));
+     if(document.getElementById("salary").value != ""){
+       salary = Number(document.getElementById("salary").value);
        inputs[0] = salary;
      }else{
        alert("Please input a salary.");
      }
 
      var food;
-     if(document.getElementById("food") != ""){
-       food = Number(document.getElementById("food"));
+     if(document.getElementById("food").value != ""){
+       food = Number(document.getElementById("food").value);
      }else{
        food = -1;
      }
      inputs[1] = food;
 
      var housing;
-     if(document.getElementById("housing") != ""){
-       housing = Number(document.getElementById("housing"));
+     if(document.getElementById("housing").value != ""){
+       housing = Number(document.getElementById("housing").value);
      }else{
        housing = -1;
      }
      inputs[2] = housing;
 
      var water;
-     if(document.getElementById("water") != ""){
-       water = Number(document.getElementById("water"));
+     if(document.getElementById("water").value != ""){
+       water = Number(document.getElementById("water").value);
      }else{
        water = -1;
      }
      inputs[3] = water;
 
      var electricity;
-     if(document.getElementById("electricity") != ""){
-       electricity = Number(document.getElementById("electricity"));
+     if(document.getElementById("electricity").value != ""){
+       electricity = Number(document.getElementById("electricity").value);
      }else{
        electricity = -1;
      }
      inputs[4] = electricity;
 
      var transportation;
-     if(document.getElementById("transportation") != ""){
-       transportation = Number(document.getElementById("transportation"));
+     if(document.getElementById("transportation").value != ""){
+       transportation = Number(document.getElementById("transportation").value);
      }else{
        transportation = -1;
      }
      inputs[5] = transportation;
 
      var apparel;
-     if(document.getElementById("apparel") != ""){
-       apparel = Number(document.getElementById("apparel"));
+     if(document.getElementById("apparel").value != ""){
+       apparel = Number(document.getElementById("apparel").value);
      }else{
        apparel = -1;
      }
      inputs[6] = apparel;
 
      var healthcare;
-     if(document.getElementById("healthcare") != ""){
-       healthcare = Number(document.getElementById("healthcare"));
+     if(document.getElementById("healthcare").value != ""){
+       healthcare = Number(document.getElementById("healthcare").value);
      }else{
        healthcare = -1;
      }
      inputs[7] = healthcare;
 
      var entertainment;
-     if(document.getElementById("entertainment") != ""){
-       entertainment = Number(document.getElementById("entertainment"));
+     if(document.getElementById("entertainment").value != ""){
+       entertainment = Number(document.getElementById("entertainment").value);
      }else{
        entertainment = -1;
      }
      inputs[8] = entertainment;
 
      var pCare;
-     if(document.getElementById("pCare") != ""){
-       pCare = Number(document.getElementById("pCare"));
+     if(document.getElementById("pCare").value != ""){
+       pCare = Number(document.getElementById("pCare").value);
      }else{
        pCare = -1;
      }
      inputs[9] = pCare;
 
      var education;
-     if(document.getElementById("education") != ""){
-       education = Number(document.getElementById("education"));
+     if(document.getElementById("education").value != ""){
+       education = Number(document.getElementById("education").value);
      }else{
        education = -1;
      }
      inputs[10] = education;
 
      var donations;
-     if(document.getElementById("donations") != ""){
-       donations = Number(document.getElementById("donations"));
+     if(document.getElementById("donations").value != ""){
+       donations = Number(document.getElementById("donations").value);
      }else{
        donations = -1;
      }
      inputs[11] = donations;
 
      var insTax;
-     if(document.getElementById("insTax") != ""){
-       insTax = Number(document.getElementById("insTax"));
+     if(document.getElementById("insTax").value != ""){
+       insTax = Number(document.getElementById("insTax").value);
      }else{
        insTax = -1;
      }
      inputs[12] = insTax;
 
      var misc;
-     if(document.getElementById("misc") != ""){
-       misc = Number(document.getElementById("misc"));
+     if(document.getElementById("misc").value != ""){
+       misc = Number(document.getElementById("misc").value);
      }else{
        misc = -1;
      }
      inputs[13] = misc;
 
      var contribution;
-     if(document.getElementById("contribution") != ""){
-       contribution = Number(document.getElementById("contribution"));
+     if(document.getElementById("contribution").value != ""){
+       contribution = Number(document.getElementById("contribution").value);
      }else{
        contribution = -1;
      }
      inputs[14] = contribution;
-     */
 
      var totalKnown = 0;
      for(var i = 1; i < inputs.length; i++){
-       totalKnown += (inputs[i] * 12);
+       if(inputs[i] >= 0){
+         totalKnown += (inputs[i] * 12);
+       }
      }
 
      if(totalKnown > salary){
@@ -160,7 +161,7 @@ function budget(){
      avgs[1] = 16706 / avgSalary; //Housing
      avgs[2] = 840 / avgSalary; //Water
      avgs[3] = 1340 / avgSalary; //Electricity
-     agvs[4] = 9049 / avgSalary; //Transportation
+     avgs[4] = 9049 / avgSalary; //Transportation
      avgs[5] = 1803 / avgSalary; //Apparel
      avgs[6] = 4612 / avgSalary; //Healthcare
      avgs[7] = 3031 / avgSalary; //Entertainment
@@ -172,26 +173,17 @@ function budget(){
      avgs[13] = undefined; //Not necessary for avgs
 
      //User averages
-     var userPcts = []
-     userPcts[0] = (food * 12) / salary;
-     userPcts[1] = (housing * 12) / salary;
-     userPcts[2] = (water * 12) / salary;
-     userPcts[3] = (electricity * 12) / salary;
-     userPcts[4] = (transportation * 12) / salary;
-     userPcts[5] = (apparel * 12) / salary;
-     userPcts[6] = (healthcare * 12) / salary;
-     userPcts[7] = (entertainment * 12) / salary;
-     userPcts[8] = (pCare * 12) / salary;
-     userPcts[9] = (education * 12) / salary;
-     userPcts[10] = (donations * 12) / salary;
-     userPcts[11] = (insTax * 12) / salary;
-     userPcts[12] = (misc * 12) / salary;
-     userPcts[13] = (contribution * 12) / salary;
+     var userPcts = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+     for(var i = 1; i < 15; i++){
+       if(inputs[i] >= 0){
+         userPcts[i-1] = (inputs[i] * 12) / salary
+       }
+     }
 
      //Gets what percent of the USERS salary is accounted for by fields they entered (Based on what they didn't enter)
      var accounted = 0;
      var unaccountedModel = 0;
-     for(var i = 1; i < inputs.lenght; i++){
+     for(var i = 1; i < 14; i++){
         if(inputs[i] >= 0){
           accounted += userPcts[i-1];
         }else{
@@ -199,14 +191,16 @@ function budget(){
         }
      }
 
+     unaccountedModel += (6863 / avgSalary)
+
      //IF ANY NUMBERS ARE INCORRECT, IT IS PROBABLY THIS CALCULATION!!!
      //PLEASE BE ADVISED LATER JACK!!!!
      //IF UR NOT JACK AND U READ THIS AND ARE DEBUGGING, PLEASE LET JACK KNOW HE FORKED UP!!!!
 
      //Adds "expected" values to the input array
-     var unaccounted = 100 - accounted;
+     var unaccounted = 1 - accounted;
      var extra = (1 - (6863 / avgSalary)) * (salary - totalKnown);
-     for(var i = 1; i < inputs.lenght; i++){
+     for(var i = 1; i < 14; i++){
         if(inputs[i] === -1){
           var thisAvg = unaccounted / unaccountedModel * avgs[i-1];
           inputs[i] = thisAvg * extra;
@@ -215,7 +209,7 @@ function budget(){
      }
 
      for(var i = 0; i < userPcts.length - 1; i++){
-       if(userPcts[i] > (avgs[i] * 1.05)){
+       if((userPcts[i] / 12) > (avgs[i] * 1.1)){
          if(i === 0){
            profile.food = 1;
          }else if(i === 1){
@@ -247,8 +241,8 @@ function budget(){
      }
 
      var expectedAccounted = 0;
-     for(var i = 1; i < inputs.length - 1; i++){
-       expectedAccounted += (inputs[i] * 12);
+     for(var i = 1; i < 15 - 1; i++){
+       expectedAccounted += (inputs[i]);
      }
 
      if(inputs[14] !== -1){
@@ -256,6 +250,8 @@ function budget(){
      }else{
        profile.available = (salary - expectedAccounted) / 12;
      }
-     return profile;
+
+     console.log(profile);
+     profile = JSON.stringify(profile);
+     localStorage.setItem("data", profile);
 }
-export default budget;
