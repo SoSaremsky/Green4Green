@@ -1,4 +1,17 @@
+//temp lat < 40 = hot
+//temp lat >= 40 = cold
+//sunshine 29 < sun <=50   low
+//sunshine 50 < sun <= 70  med 
+//sunshine 70 < sun <= 90  hi
+
 function coordsByZipcode(zip){
+
+	var location = {
+		sunlevel: 0,
+		commType: "",
+		temp: ""
+	};
+	
   var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
   var reqhttp = new XMLHttpRequest();
 
@@ -8,7 +21,7 @@ function coordsByZipcode(zip){
   reqhttp.responseType = "json";
   reqhttp.open("GET", url, true);
   reqhttp.setRequestHeader("Content-type", "application/json");
-  reqhttp.setRequestHeader("Authorization", "910771335EB6744C9F9449F304EC3FF5");
+	reqhttp.setRequestHeader("Authorization", "910771335EB6744C9F9449F304EC3FF5");
   reqhttp.send();
 
   var coords = [];
@@ -17,17 +30,49 @@ function coordsByZipcode(zip){
   function processRequest(e) {
     if (reqhttp.readyState == 4 && reqhttp.status == 200) {
         var response = JSON.parse(reqhttp.responseText);
-        console.log(coords[0] = response[0].Coords.Lat);
-        console.log(coords[1] = response[0].Coords.Lon);
+        coords[0] = response[0].Coords.Lat;
+        coords[1] = response[0].Coords.Lon;
+		var city = distanceCities(coords[0], coords[1]);
+		var fs = require('fs');
+		var textByLine = fs.readFileSync('data.txt').toString().split("\n");
+		var parts = textByLine[city].toString().split(" #");
+		var sunshine = parseFloat(parts[3].substring(10));
+		var temp = 1; //cold
+		if (sunshine >= 30 && sunshine <= 50)
+			sunshine = 1;
+		else if (sunshine > 50 && sunshine <= 70)
+			sunshine = 2;
+		else
+			sunshine = 3;
+		if (coords[0] > 45)
+			temp = 2;
+		location.sunlevel = sunshine;
+		if(temp === 1){
+			location.temp = "cold";
+		}else{
+			location.temp = "hot";
+		}
+		location.commType = document.getElementById("community").value;
+		localStorage.setItem("loc", location);i
     }
   }
-  return coords;
 }
 
-function main(){
-  var userCoords = coordsByZipcode("10603");
-  console.log(userCoords[0]);
-  console.log(userCoords[1]);
+function distanceCities(lat1,lon1){
+	var fs = require('fs');
+	var textByLine = fs.readFileSync('data.txt').toString().split("\n");
+	var init = textByLine[0].toString().split(" #");
+	var smol = distance(lat1, lon1, parseFloat(init[1].substring(5)), parseFloat(init[2].substring(6)));
+	var index = 0;
+	for (var i = 1; i < 155; i++){
+		parts = textByLine[i].toString().split(" #");
+		var dist = distance(lat1, lon1, parseFloat(parts[1].substring(5)), parseFloat(parts[2].substring(6)));
+		if (dist < smol){
+			smol = dist;
+			index = i;
+		}
+	}
+	return index;
 }
 
 function coordsFromCity(city, state){
@@ -77,14 +122,4 @@ function distance(lat1, lon1, lat2, lon2) {
 	}
 }
 
-function sunshine(){
-  var fs = require('fs');
-  var textByLine = fs.readFileSync('sunshine.txt').toString().split("\n");
-  for (var i = 0; i < 157; i++){
-    //hehe(split[0].trim(),split[1].trim());
-  }
-}
-
-
-
-main();
+coordsByZipcode("90009");
