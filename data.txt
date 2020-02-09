@@ -1,0 +1,155 @@
+name: Los Angeles #lat: 33.9771 #long: -118.241559 #sunshine: 73 #
+name: Grand Junction #lat: 39.040343 #long: -108.516074 #sunshine: 71 #
+name: Flagstaff #lat: 35.285217 #long: -111.748916 #sunshine: 78 #
+name: Milford #lat: 33.91861 #long: -94.08528 #sunshine: 70 #
+name: Redding #lat: 35.68 #long: -93.77694 #sunshine: 88 #
+name: Little Rock #lat: 31.11444 #long: -87.38889 #sunshine: 62 #
+name: Odessa #lat: 39.457332 #long: -75.661317 #sunshine: 74 #
+name: Amarillo #lat: 35.220769 #long: -101.83102 #sunshine: 73 #
+name: Denver #lat: 32.99389 #long: -85.60667 #sunshine: 69 #
+name: Miami #lat: 33.399217 #long: -110.868724 #sunshine: 70 #
+name: Las Vegas #lat: 36.173959 #long: -115.12302 #sunshine: 85 #
+name: Winnemucca #lat: 40.973581 #long: -117.734304 #sunshine: 68 #
+name: Yuma #lat: 32.699185 #long: -114.574888 #sunshine: 90 #
+name: Roswell #lat: 34.2075 #long: -86.53667 #sunshine: 74 #
+name: Concordia #lat: 39.570834 #long: -97.662543 #sunshine: 67 #
+name: Lake Charles #lat: 28.1163 #long: -82.4811 #sunshine: 72 #
+name: Cheyenne #lat: 39.17667 #long: -98.63861 #sunshine: 66 #
+name: Lubbock #lat: 33.577841 #long: -101.855143 #sunshine: 72 #
+name: Abilene #lat: 36.14556 #long: -119.05278 #sunshine: 70 #
+name: Phoenix #lat: 33.451095 #long: -112.077428 #sunshine: 85 #
+name: Pueblo #lat: 38.270621 #long: -104.607368 #sunshine: 76 #
+name: Tucson #lat: 32.210636 #long: -110.967733 #sunshine: 85 #
+name: Reno #lat: 38.95278 #long: -77.07861 #sunshine: 79 #
+name: Dodge City #lat: 34.178709 #long: -86.847497 #sunshine: 70 #
+name: Ely #lat: 41.873619 #long: -91.585177 #sunshine: 73 #
+name: Albuquerque #lat: 35.092687 #long: -106.642907 #sunshine: 76 #
+name: Fresno #lat: 33.963108 #long: -91.706365 #sunshine: 79 #
+name: Rapid City #lat: 44.834439 #long: -85.282561 #sunshine: 63 #
+name: Saint Louis #lat: 38.628268 #long: -90.205698 #sunshine: 0 #
+name: Nashville #lat: 33.948121 #long: -93.844631 #sunshine: 56 #
+name: Corpus Christi #lat: 27.795311 #long: -97.399132 #sunshine: 60 #
+name: Wilmington #lat: 33.80001 #long: -118.268964 #sunshine: 63 #
+name: Columbia #lat: 31.294641 #long: -85.108381 #sunshine: 56 #
+name: Sioux City #lat: 42.489769 #long: -96.399641 #sunshine: 61 #
+name: Great Falls #lat: 39.00222 #long: -77.24639 #sunshine: 61 #
+name: Tupelo #lat: 34.75083 #long: -86.07778 #sunshine: 64 #
+name: Cairo #lat: 34.87056 #long: -87.14444 #sunshine: 61 #
+name: Cape Hatteras #lat: 35.22444 #long: -75.530552 #sunshine: 60 #
+name: Charlotte #lat: 35.818404 #long: -91.438745 #sunshine: 62 #
+name: Moline #lat: 41.510317 #long: -90.572682 #sunshine: 55 #
+name: Lincoln #lat: 33.609592 #long: -86.109758 #sunshine: 61 #
+name: Brownsville #lat: 33.12583 #long: -86.04722 #sunshine: 60 #
+name: Jackson #lat: 31.514458 #long: -87.895273 #sunshine: 61 #
+name: Austin #lat: 34.998417 #long: -91.983755 #sunshine: 60 #
+name: Columbus #lat: 33.75806 #long: -86.75333 #sunshine: 50 #
+name: Lynchburg #lat: 28.08778 #long: -81.75528 #sunshine: 59 #
+name: Savannah #lat: 32.083474 #long: -81.099823 #sunshine: 62 #
+name: Springfield #lat: 31.83361 #long: -87.76194 #sunshine: 58 #
+name: Lihue #lat: 21.981167 #long: -159.371089 #sunshine: 58 #
+name: Kansas City #lat: 39.109467 #long: -94.681375 #sunshine: 60 #
+name: San Antonio #lat: 38.18389 #long: -122.59028 #sunshine: 60 #
+name: Greenville #lat: 31.83796 #long: -86.614782 #sunshine: 60 #
+name: Memphis #lat: 33.13639 #long: -88.2975 #sunshine: 64 #
+name: Williston #lat: 29.388372 #long: -82.446735 #sunshine: 60 #
+name: Spokane #lat: 31.69917 #long: -91.46028 #sunshine: 54 #
+name: Tulsa #lat: 36.151307 #long: -95.994822 #sunshine: 62 #
+name: Charleston #lat: 31.63194 #long: -110.17361 #sunshine: 63 #
+name: Dayton #lat: 32.459878 #long: -87.594012 #sunshine: 53 #
+name: Minneapolis #lat: 39.123109 #long: -97.707281 #sunshine: 58 #
+name: Evansville #lat: 32.83806 #long: -87.7525 #sunshine: 59 #
+name: Richmond #lat: 32.113889 #long: -87.055 #sunshine: 63 #
+name: Little Rock #lat: 31.11444 #long: -87.38889 #sunshine: 62 #
+name: Galveston #lat: 40.578922 #long: -86.190272 #sunshine: 62 #
+name: Norfolk #lat: 40.91083 #long: -104.96917 #sunshine: 60 #
+name: Billings #lat: 43.84972 #long: -84.34722 #sunshine: 60 #
+name: Atlanta #lat: 33.118609 #long: -93.0525 #sunshine: 60 #
+name: Topeka #lat: 40.33032 #long: -89.931226 #sunshine: 61 #
+name: Birmingham #lat: 33.520916 #long: -86.809988 #sunshine: 57 #
+name: North Platte #lat: 41.137228 #long: -100.75434 #sunshine: 67 #
+name: Fort Smith #lat: 35.385796 #long: -94.416424 #sunshine: 61 #
+name: Fargo #lat: 34.95139 #long: -91.18 #sunshine: 57 #
+name: Harrisburg #lat: 32.875955 #long: -87.224443 #sunshine: 57 #
+name: San Francisco #lat: 37.778337 #long: -122.419779 #sunshine: 66 #
+name: Hartford #lat: 31.102199 #long: -85.697038 #sunshine: 56 #
+name: Kahului #lat: 20.890555 #long: -156.467702 #sunshine: 67 #
+name: Salt Lake City #lat: 40.760845 #long: -111.901531 #sunshine: 66 #
+name: Tampa #lat: 40.15 #long: -104.455 #sunshine: 66 #
+name: Huron #lat: 36.205651 #long: -120.101418 #sunshine: 63 #
+name: Pocatello #lat: 42.874899 #long: -112.43124 #sunshine: 64 #
+name: Sacramento #lat: 38.576065 #long: -121.491409 #sunshine: 78 #
+name: Lander #lat: 39.30889 #long: -77.55944 #sunshine: 68 #
+name: Macon #lat: 33.73056 #long: -86.07722 #sunshine: 66 #
+name: Key West #lat: 24.557905 #long: -81.80373 #sunshine: 76 #
+name: Honolulu #lat: 21.313609 #long: -157.86129 #sunshine: 71 #
+name: Wichita #lat: 41.73333 #long: -94.60389 #sunshine: 65 #
+name: Oklahoma City #lat: 35.466994 #long: -97.514686 #sunshine: 68 #
+name: Dallas #lat: 33.84944 #long: -86.66056 #sunshine: 61 #
+name: Sheridan #lat: 34.307247 #long: -92.399073 #sunshine: 63 #
+name: Boise #lat: 43.61387 #long: -116.203576 #sunshine: 64 #
+name: Valentine #lat: 33.223889 #long: -86.47056 #sunshine: 65 #
+name: San Diego #lat: 32.714271 #long: -117.147616 #sunshine: 68 #
+name: Portland #lat: 32.15444 #long: -87.16861 #sunshine: 48 #
+name: Greensboro #lat: 32.703565 #long: -87.599028 #sunshine: 60 #
+name: Burlington #lat: 32.58028 #long: -85.93889 #sunshine: 49 #
+name: Peoria #lat: 33.797518 #long: -112.249684 #sunshine: 56 #
+name: Philadelphia #lat: 33.94167 #long: -85.54778 #sunshine: 56 #
+name: Des Moines #lat: 33.93194 #long: -117.96694 #sunshine: 59 #
+name: Alpena #lat: 36.294086 #long: -93.295746 #sunshine: 48 #
+name: Fort Wayne #lat: 41.07476 #long: -85.144102 #sunshine: 59 #
+name: Bismarck #lat: 34.316266 #long: -93.171701 #sunshine: 59 #
+name: Grand Rapids #lat: 43.027961 #long: -85.743377 #sunshine: 46 #
+name: Hilo #lat: 33.361669 #long: -92.2725 #sunshine: 41 #
+name: Nome #lat: 64.506876 #long: -165.402307 #sunshine: 42 #
+name: Indianapolis #lat: 39.768365 #long: -86.158064 #sunshine: 55 #
+name: New York #lat: 30.83833 #long: -87.20083 #sunshine: 58 #
+name: Juneau #lat: 58.299823 #long: -134.411445 #sunshine: 30 #
+name: Boston #lat: 31.46778 #long: -86.48194 #sunshine: 58 #
+name: Buffalo #lat: 32.946109 #long: -85.40194 #sunshine: 48 #
+name: Helena #lat: 33.343002 #long: -86.951284 #sunshine: 59 #
+name: Chicago #lat: 41.874372 #long: -87.65139 #sunshine: 54 #
+name: Houston #lat: 34.14149 #long: -87.258072 #sunshine: 59 #
+name: Pittsburgh #lat: 38.199824 #long: -83.776905 #sunshine: 45 #
+name: Providence #lat: 32.496793 #long: -87.716119 #sunshine: 58 #
+name: Missoula #lat: 46.876456 #long: -114.000989 #sunshine: 55 #
+name: Port Arthur #lat: 29.879906 #long: -93.946462 #sunshine: 58 #
+name: Knoxville #lat: 32.992339 #long: -87.790571 #sunshine: 56 #
+name: Blue Hill #lat: 34.87194 #long: -92.345 #sunshine: 52 #
+name: Birmingham #lat: 33.520916 #long: -86.809988 #sunshine: 57 #
+name: Concord #lat: 33.37194 #long: -85.80556 #sunshine: 54 #
+name: Baltimore #lat: 39.903313 #long: -105.574443 #sunshine: 57 #
+name: New Orleans #lat: 29.956107 #long: -90.077253 #sunshine: 57 #
+name: Marquette #lat: 27.6958 #long: -82.3976 #sunshine: 50 #
+name: Detroit #lat: 34.037626 #long: -88.173197 #sunshine: 53 #
+name: Chattanooga #lat: 40.63694 #long: -84.785 #sunshine: 57 #
+name: Toledo #lat: 33.92639 #long: -92.16111 #sunshine: 52 #
+name: Syracuse #lat: 41.430001 #long: -85.750759 #sunshine: 46 #
+name: Seattle #lat: 47.60896 #long: -122.33478 #sunshine: 47 #
+name: Anchorage #lat: 61.217075 #long: -149.901643 #sunshine: 41 #
+name: Green Bay #lat: 31.17778 #long: -86.28944 #sunshine: 54 #
+name: Shreveport #lat: 32.511973 #long: -93.744604 #sunshine: 64 #
+name: Albany #lat: 34.59667 #long: -86.96556 #sunshine: 53 #
+name: Springfield #lat: 31.83361 #long: -87.76194 #sunshine: 58 #
+name: Avoca #lat: 36.401595 #long: -94.071606 #sunshine: 51 #
+name: Omaha #lat: 33.3025 #long: -85.31028 #sunshine: 60 #
+name: Harrisburg #lat: 32.875955 #long: -87.224443 #sunshine: 57 #
+name: Lansing #lat: 35.25028 #long: -90.38667 #sunshine: 51 #
+name: Jacksonville #lat: 33.832497 #long: -85.760755 #sunshine: 63 #
+name: Apalachicola #lat: 29.731126 #long: -84.987254 #sunshine: 66 #
+name: Pensacola #lat: 30.411347 #long: -87.224686 #sunshine: 60 #
+name: Columbia #lat: 31.294641 #long: -85.108381 #sunshine: 56 #
+name: Raleigh #lat: 29.44139 #long: -82.46639 #sunshine: 58 #
+name: Asheville #lat: 35.597505 #long: -82.552566 #sunshine: 59 #
+name: Atlantic City #lat: 39.362469 #long: -74.438942 #sunshine: 56 #
+name: Binghamton #lat: 38.35139 #long: -121.82167 #sunshine: 49 #
+name: Montgomery #lat: 32.374497 #long: -86.308954 #sunshine: 58 #
+name: Louisville #lat: 31.788025 #long: -85.551357 #sunshine: 56 #
+name: Milwaukee #lat: 36.437092 #long: -77.228852 #sunshine: 54 #
+name: Duluth #lat: 34.006213 #long: -84.140574 #sunshine: 52 #
+name: Cincinnati #lat: 36.03722 #long: -94.51083 #sunshine: 50 #
+name: Rochester #lat: 34.09167 #long: -117.54667 #sunshine: 51 #
+name: Madison #lat: 34.699257 #long: -86.748336 #sunshine: 54 #
+name: Allentown #lat: 35.29194 #long: -109.15778 #sunshine: 53 #
+name: Cleveland #lat: 33.991372 #long: -86.585462 #sunshine: 49 #
+name: Portland #lat: 32.15444 #long: -87.16861 #sunshine: 48 #
+name: Mount Washington #lat: 38.04782 #long: -85.547476 #sunshine: 33 # 
